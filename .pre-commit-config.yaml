@@ -1,0 +1,37 @@
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+    - id: check-byte-order-marker
+    - id: check-case-conflict
+    - id: check-case-conflict
+    - id: check-merge-conflict
+    - id: check-symlinks
+    - id: check-toml
+    - id: check-yaml
+    - id: end-of-file-fixer
+    - id: mixed-line-ending
+    - id: trailing-whitespace
+-   repo: local
+    hooks:
+      - id: fmt
+        name: fmt
+        description: Format files with prettier fmt.
+        entry: npm run format
+        language: system
+        pass_filenames: false
+        args: []
+      - id: eslint
+        name: eslint
+        description: Run ESLint on the code
+        entry: npm run lint
+        language: system
+        pass_filenames: false
+        args: []
+      - id: UnitTest
+        name: UnitTest
+        description: Run unit tests with Jest.
+        entry: npm run test
+        language: system
+        pass_filenames: false
+        args: []
